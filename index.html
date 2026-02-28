@@ -1,1 +1,58 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Movimentação de Peças de Xadrez</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top">
+    <h1>Movimentação de Peças de Xadrez</h1>
 
+    <div class="controls">
+      <label>
+        Peça:
+        <select id="piece">
+          <option value="king">Rei</option>
+          <option value="queen">Rainha</option>
+          <option value="rook">Torre</option>
+          <option value="bishop">Bispo</option>
+          <option value="knight">Cavalo</option>
+          <option value="pawn_w">Peão (branco)</option>
+          <option value="pawn_b">Peão (preto)</option>
+        </select>
+      </label>
+
+      <label>
+        Mostrar coordenadas:
+        <input type="checkbox" id="coords" checked />
+      </label>
+
+      <button id="clear">Limpar</button>
+    </div>
+
+    <p class="hint">
+      Clique em uma casa para escolher a posição inicial. As casas verdes são movimentos possíveis.
+    </p>
+  </header>
+
+  <main class="main">
+    <section class="board-wrap">
+      <div id="board" class="board" aria-label="Tabuleiro de xadrez"></div>
+    </section>
+
+    <aside class="panel">
+      <h2>Regras (resumo)</h2>
+      <ul id="rules"></ul>
+      <div class="status" id="status">Selecione uma peça e clique no tabuleiro.</div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    Feito para o trabalho: <strong>Tema 4 - Movimentação de Peças de Xadrez</strong>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
