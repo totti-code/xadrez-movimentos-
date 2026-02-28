@@ -1,1 +1,118 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: #0b1020;
+  color: #e7e9ee;
+}
 
+.top {
+  padding: 18px 16px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.03);
+}
+h1 { margin: 0 0 10px; font-size: 20px; }
+
+.controls {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+label { display: flex; gap: 8px; align-items: center; }
+select, button {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.15);
+  background: rgba(255,255,255,.06);
+  color: #e7e9ee;
+}
+button { cursor: pointer; }
+button:hover { background: rgba(255,255,255,.10); }
+
+.hint { margin: 12px 0 0; opacity: .9; font-size: 14px; }
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 16px;
+  padding: 16px;
+}
+@media (max-width: 900px) {
+  .main { grid-template-columns: 1fr; }
+}
+
+.board-wrap {
+  display: grid;
+  place-items: center;
+}
+
+.board {
+  width: min(84vw, 520px);
+  aspect-ratio: 1 / 1;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,.45);
+  border: 1px solid rgba(255,255,255,.10);
+}
+
+.square {
+  position: relative;
+  display: grid;
+  place-items: center;
+  user-select: none;
+  cursor: pointer;
+  font-size: clamp(12px, 2vw, 14px);
+}
+.light { background: #d9dce3; color: #111; }
+.dark  { background: #404656; color: #fff; }
+
+.square .coord {
+  position: absolute;
+  left: 6px;
+  bottom: 5px;
+  font-size: 10px;
+  opacity: .75;
+}
+
+.square.start {
+  outline: 3px solid rgba(255, 215, 0, .85);
+  outline-offset: -3px;
+}
+.square.move::after {
+  content: "";
+  width: 60%;
+  height: 60%;
+  border-radius: 14px;
+  background: rgba(34, 197, 94, .45);
+  outline: 2px solid rgba(34, 197, 94, .7);
+}
+
+.panel {
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.03);
+  height: fit-content;
+}
+.panel h2 { margin: 0 0 10px; font-size: 16px; }
+.panel ul { margin: 0 0 10px; padding-left: 18px; }
+.panel li { margin: 6px 0; opacity: .95; }
+
+.status {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  font-size: 14px;
+}
+
+.footer {
+  padding: 14px 16px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  opacity: .9;
+  font-size: 13px;
+}
